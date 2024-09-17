@@ -1,7 +1,7 @@
 # instance related variables
 variable "ami_id" {
-    description = "AWS EC2 AMI id"
-  type = string
+  description = "AWS EC2 AMI id"
+  type        = string
 }
 
 variable "instance_type" {
@@ -15,6 +15,11 @@ variable "instance_tags" {
 
 variable "associate_public_ip_address_setting" {
   type = bool
+}
+
+variable "user_data_script_path" {
+  description = "user data script path"
+  type        = string
 }
 
 # Security group variables
