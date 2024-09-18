@@ -9,9 +9,9 @@ resource "aws_key_pair" "key_for_instance" {
 }
 
 resource "local_file" "private_key" {
-  filename = var.local_file_private_key_filename
-  content  = tls_private_key.key_for_instance.private_key_pem
-  file_permission = var.local_file_private_key_file_permission 
+  filename        = var.local_file_private_key_filename
+  content         = tls_private_key.key_for_instance.private_key_pem
+  file_permission = var.local_file_private_key_file_permission
 }
 
 output "key_pair_name" {

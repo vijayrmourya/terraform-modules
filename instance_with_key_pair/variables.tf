@@ -1,3 +1,12 @@
+variable "platform_type" {
+  description = "Platform: Windows, Linux"
+  type        = string
+}
+
+locals {
+  is_it_windows = var.platform_type == "Windows"
+}
+
 # instance related variables
 variable "ami_id" {
   description = "AWS EC2 AMI id"
