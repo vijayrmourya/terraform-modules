@@ -15,6 +15,6 @@ locals {
 }
 
 output "windows_password" {
-  value = rsadecrypt(aws_instance.ec2-instance.password_data, nonsensitive(tls_private_key.key_for_instance.private_key_pem))
+  value = local.is_it_windows ? rsadecrypt(aws_instance.ec2-instance.password_data, nonsensitive(tls_private_key.key_for_instance.private_key_pem)) : ""
 }
 
